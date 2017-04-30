@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1493575580 source:c:\users\lucas\desktop\ackermann\main.c
+1493582441 source:c:\users\lucas\desktop\ackermann\main.c
 	<stdio.h>
 	<stdlib.h>
 	"big_number.c"
 
-1493575946 c:\users\lucas\desktop\ackermann\big_number.h
+1493582420 c:\users\lucas\desktop\ackermann\big_number.h
+	<string.h>
 
-1493575636 c:\users\lucas\desktop\ackermann\big_number.c
+1493582508 c:\users\lucas\desktop\ackermann\big_number.c
 	"big_number.h"
 

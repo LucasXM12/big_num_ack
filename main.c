@@ -4,23 +4,13 @@
 
 int main()
 {
-    node num1, num2;
+    node num;
+    clear_list(num);
 
-    for (int i = 0; i < SIZE / 2; i++) {
-        num1.digs[i] = 17;
-        num2.digs[i] = ((i + 1) << 4) + i;
-    }
+    for (int i = 1; i <= 258; i++)
+        add_val(&num, 255);
 
-    num1.digs[0] = 0;
-    num2.digs[SIZE / 2 - 1] = 255;
-
-    num1.previous = 0;
-    num1.next = &num2;
-
-    num2.previous = &num1;
-    num2.next = 0;
-
-    print_list(num2);
+    print_list(num.next);
 
     return 0;
 }
