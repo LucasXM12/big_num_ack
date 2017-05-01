@@ -1,37 +1,34 @@
 #include "big_number.h"
 
-void print_list(const node* dig_list) { //Receive the last node
-    foreach_back(dig_list->digs)
-        print2n(item);
+void print_list(const node* _node) { //Prints from received node in reverse order
+    foreach_back(_node->digs)
+        print2nibble(item);
 
-    if (dig_list->previous)
-        print_list(dig_list->previous);
+    if (_node->previous)
+        print_list(_node->previous);
 }
 
-void add_val(node* dig_list, unsigned char val) { //Adds the value in the list (receive the first node)
-    short aux;
+void add_val(node* _node, unsigned char _val) { //Adds the value in the list starting with the received node
+    foreach (_node->digs) {
+        unsigned short sum = item + _val;
+        _node->digs[i] = sum;
+        _val = sum >> 8;
 
-    for (short i = 0, item = dig_list->digs[i]; i < SIZE / 2; item = dig_list->digs[++i]) {
-        aux = item + val;
-        dig_list->digs[i] = aux;
-        val = aux >> 8;
-
-        if (!val)
+        if (!_val)
             break;
     }
 
-    if (val) {
-        if (dig_list->next) {
-            add_val(dig_list->next, val);
+    if(_val) {
+        if (_node->next) {
+            add_val(_node->next, _val);
         } else {
             node* newNode = (node*) malloc(sizeof(node));
             clear_var(*newNode);
 
-            dig_list->next = newNode;
-            newNode->previous = dig_list;
-            newNode->next = 0;
+            _node->next = newNode;
+            newNode->previous = _node;
 
-            add_val(dig_list->next, val);
+            add_val(newNode, _val);
         }
     }
 }
