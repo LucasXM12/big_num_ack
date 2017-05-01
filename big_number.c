@@ -1,6 +1,6 @@
 #include "big_number.h"
 
-void print_list(node* dig_list) { //Receive the last node
+void print_list(const node* dig_list) { //Receive the last node
     foreach_back(dig_list->digs)
         print2n(item);
 
@@ -25,7 +25,7 @@ void add_val(node* dig_list, unsigned char val) { //Adds the value in the list (
             add_val(dig_list->next, val);
         } else {
             node* newNode = (node*) malloc(sizeof(node));
-            clear_list(*newNode);
+            clear_var(*newNode);
 
             dig_list->next = newNode;
             newNode->previous = dig_list;

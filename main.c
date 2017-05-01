@@ -5,7 +5,7 @@
 int main()
 {
     node num;
-    clear_list(num);
+    clear_var(num);
 
     for (int i = 1; i <= 258; i++)
         add_val(&num, 255);
