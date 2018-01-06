@@ -32,3 +32,28 @@ void add_val(node* _node, unsigned char _val) { //Adds the value in the list sta
         }
     }
 }
+
+void sub_val(node* _node, unsigned char _val) {
+    foreach(_node->digs) {
+        if (item * power(256, i)  >= _val) {
+            _node->digs[i] = (item * power(256, i) - _val) / powers(256, i);
+            return;
+        }
+
+        _val -= item;
+        _node->digs[i] = 0;
+    }
+}
+
+char is_zero(node* _node) {
+    foreach (_node->digs)
+        if (item)
+            return 0;
+
+    if (_node->next)
+        return is_zero(_node->next);
+
+    return 1;
+}
+
+
